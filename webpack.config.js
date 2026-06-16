@@ -1,9 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Определяем базовый путь в зависимости от окружения
+// Используем название репозитория как базовый путь
+const repoName = 'trello-clone';
 const isProduction = process.env.NODE_ENV === 'production';
-const publicPath = isProduction ? '/trello-clone/' : '/';
+const publicPath = isProduction ? `/${repoName}/` : '/';
 
 module.exports = {
   entry: './src/index.tsx',
@@ -11,7 +12,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: publicPath, // Динамический путь для локальной разработки и GitHub Pages
+    publicPath: publicPath,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -37,8 +38,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
-      // Добавляем базовый тег для корректной работы относительных путей
-      base: isProduction ? '/trello-clone/' : '/',
     }),
   ],
   devServer: {
