@@ -1,18 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-// Используем название репозитория как базовый путь
-const repoName = 'trello-clone';
-const isProduction = process.env.NODE_ENV === 'production';
-const publicPath = isProduction ? `/${repoName}/` : '/';
-
 module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
     clean: true,
-    publicPath: publicPath,
+    publicPath: './', // Относительный путь
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
