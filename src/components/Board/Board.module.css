@@ -1,0 +1,29 @@
+.board {
+  background: #0079bf;
+  min-height: 100vh;
+  padding: 20px 20px 40px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.boardTitle {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 0 8px;
+}
+
+.columnsContainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 8px 4px 8px 0;
+  flex: 1;
+}
+
+.columnsContainer > * {
+  flex-shrink: 0;
+}

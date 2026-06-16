@@ -1,0 +1,83 @@
+.addCardContainer {
+  padding: 4px 8px;
+}
+
+.addCardButton {
+  background: none;
+  border: none;
+  color: #5e6c84;
+  cursor: pointer;
+  padding: 8px 12px;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.addCardButton:hover {
+  background: rgba(9, 30, 66, 0.08);
+  color: #172b4d;
+}
+
+.addCardForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.addCardForm textarea {
+  resize: vertical;
+  padding: 8px 12px;
+  border: 2px solid #dfe1e6;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 14px;
+  min-height: 54px;
+  transition: border-color 0.2s ease;
+}
+
+.addCardForm textarea:focus {
+  outline: none;
+  border-color: #4a90d9;
+  box-shadow: 0 0 0 2px rgba(74, 144, 217, 0.2);
+}
+
+.addCardActions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.addCardSubmit {
+  background: #0079bf;
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.addCardSubmit:hover {
+  background: #026aa7;
+}
+
+.addCardCancel {
+  background: none;
+  border: none;
+  color: #6b778c;
+  cursor: pointer;
+  font-size: 24px;
+  line-height: 1;
+  padding: 0 4px;
+  transition: color 0.2s ease;
+}
+
+.addCardCancel:hover {
+  color: #172b4d;
+}
