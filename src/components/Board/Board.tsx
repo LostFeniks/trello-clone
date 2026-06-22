@@ -76,9 +76,15 @@ export const Board: React.FC = () => {
     const dragData = JSON.stringify({ cardId, columnId });
     e.dataTransfer.setData('text/plain', dragData);
     
+    // Правильное вычисление смещения курсора
     const ghost = e.target as HTMLElement;
     if (ghost) {
-      e.dataTransfer.setDragImage(ghost, 0, 0);
+      const rect = ghost.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+      
+      // Устанавливаем изображение-призрак с правильным смещением
+      e.dataTransfer.setDragImage(ghost, offsetX, offsetY);
     }
   }, []);
 
